@@ -52,7 +52,22 @@ class DoublyLinkedList{
     }
     
     //todo add method for insert at position and delete
-    
+     public void deleteWithValue(int data){
+        if(head ==null) return;
+        if(head.data==data){
+            head = head.next;
+            return;
+           
+        }
+        Node current = head;
+        while(current.next!=null){
+            if(current.next.data ==data){
+                current.next = current.next.next;
+                return;
+            }
+            current =current.next;
+        }
+    }
     public static void main(String args[]){
         DoublyLinkedList list = new DoublyLinkedList();
         list.addAtFront(1);
@@ -60,9 +75,13 @@ class DoublyLinkedList{
         list.addAtFront(5);
         list.addAtFront(7);
         list.printList(); //prints in current order
-        list.printListReverse(); //prints in reverse order
-        list.append(8);
-        list.printList();
+        //list.printListReverse(); //prints in reverse order
+        //list.append(8);
+        //list.printList();
+        list.deleteWithValue(5);
+        list.deleteWithValue(7);
+        list.printList(); 
+        
     }
     
 }
