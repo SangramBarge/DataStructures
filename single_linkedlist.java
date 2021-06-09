@@ -26,7 +26,19 @@ Node head;
         newHead.next = head;
         head = newHead;
     }
-
+    //geekforgeeks question
+    public void moveLastToFront(){
+        Node last = head;
+        Node secondLast=null; 
+        while(last.next !=null) {
+            secondLast = last;
+            last = last.next;
+        }
+        secondLast.next=null;
+        last.next = head;
+        head = last;
+   }
+    
     public void printList(){
      Node current = head;
         while(current != null) {
@@ -53,10 +65,12 @@ Node head;
 
 public static void main(String[] args) {
     Linkedlist list = new Linkedlist();
+    list.append(3);
+    list.append(2);
     list.append(1);
-    list.prepend(2);
     list.printList();
-    list.deleteWithValue(1);
+    list.moveLastToFront();
+    //list.deleteWithValue(1);
     list.printList();
     
 }
