@@ -1,4 +1,4 @@
-
+//creating class for node
 class Node {
     int data; 
     Node next;
