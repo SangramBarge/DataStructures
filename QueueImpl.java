@@ -1,4 +1,4 @@
-//circular queue implementation in java
+// "static void main" must be defined in a public class.
 public class QueueImpl {
     int capacity=5;
     int rear;
@@ -14,8 +14,7 @@ public class QueueImpl {
     public void enqueue(int data){
         //check if full
         if(front == -1 && rear == -1){
-            front =0;
-            rear =0;
+            front =rear =0;
             queue[rear] = data;
         } else if( rear +1 % capacity ==front){
             System.out.println("Queue is full");
@@ -30,8 +29,7 @@ public class QueueImpl {
         if(front == -1 && rear == -1){
             System.out.println("Queue is empty");
         } else if(front == rear){
-            front =-1;
-            rear = -1;
+            front = rear =-1;
         } else {
             System.out.println("Dequeued element is "+queue[front]);
             front = front +1 % capacity;
